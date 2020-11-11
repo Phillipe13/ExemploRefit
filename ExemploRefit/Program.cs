@@ -9,7 +9,8 @@ namespace ExemploRefit
         static async Task Main(string[] args)
         {
             var cepClient = RestService.For<ICepApiService>("https://viacep.com.br");
-            string meuCep = "13300390";
+            Console.Write("Digite um Cep apenas com números: ");
+            string meuCep = Console.ReadLine();
             Console.WriteLine("Consultando dados do Cep:" + meuCep);
 
             var address = await cepClient.GetAddressAsync(meuCep);
